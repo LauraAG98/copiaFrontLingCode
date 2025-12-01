@@ -58,6 +58,7 @@
 .containers {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 
@@ -192,8 +193,12 @@ input {
     width: 20%;
 }
 
+#checkbox{
+    margin: 0 0 0 0;
+}
+
 span {
-    font-size: clamp(10px, 0.5vw, 30px);
+    font-size: clamp(13px, 0.5vw, 30px);
     margin-right: 4px;
     color: white;
 }
@@ -201,14 +206,14 @@ span {
 a {
     text-decoration-line: none;
     color: #00BBFF;
-    font-size: clamp(10px, 0.5vw, 30px);
+    font-size: clamp(13px, 0.5vw, 30px);
 }
 
 .line2 {
     background: linear-gradient(150deg, #00D9FF, #EA02FF);
     top: 0;
     position: absolute;
-    left: 60%;
+    left: 59.9%;
     transform-origin: left center;
     z-index: 2;
     height: 100vh;
@@ -297,6 +302,7 @@ a {
 #termsLogin {
     margin: 0 0 0 0;
     height: 10vh;
+    width: 100%;
 }
 
 #divisionLogin {
@@ -304,14 +310,29 @@ a {
 }
 
 #line2Login {
-    left: 40.3%;
+    left: 40.2%;
 }
 
 #line3Login {
     left: 40%;
 }
 
-/**
 @media(max-width: 1366px) {
+a {
+    text-decoration-line: none;
+    color: #00BBFF;
+    font-size: clamp(10px, 0.5vw, 30px);
+}
 
-**/
+.terms {
+    width: 20%;
+}
+
+.line2 {
+    left: 60%;
+}
+
+#line2Login {
+    left: 40.3%;
+}
+}
