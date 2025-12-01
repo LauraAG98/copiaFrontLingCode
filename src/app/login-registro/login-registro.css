@@ -1,0 +1,317 @@
+#panelWrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+/* Ambos paneles encima uno del otro */
+.panel {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+    transition: 
+        opacity 0.55s ease,
+        transform 0.55s cubic-bezier(.4, 0, .2, 1);
+
+    /* para que no se vean los que están atrás */
+    backface-visibility: hidden;
+}
+
+.panel.active {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+    pointer-events: auto;
+    animation: panelIn 0.55s cubic-bezier(.4, 0, .2, 1);
+}
+
+.panel.inactive {
+    opacity: 0;
+    transform: translateX(30px) scale(0.96);
+    pointer-events: none;
+    animation: panelOut 0.45s cubic-bezier(.4, 0, .2, 1);
+}
+
+@keyframes swap {
+  0% {
+    opacity: 0;
+    transform: scale(0.96) translateX(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateX(0);
+  }
+}
+
+.authClass {
+    display: flex;
+    flex-direction: row;
+    background:
+        linear-gradient(90deg, #000 60%, #f5f5f500 50%),
+        url("https://res.cloudinary.com/ddvjgyi3f/image/upload/v1764470513/Gemini_Generated_Image_nk3tv7nk3tv7nk3t-removebg-preview_3_1_rwgpz5.png") no-repeat 60vw -10vh / 40vw;
+    position: relative;
+    height: 100vh;
+}
+
+.containers {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.tittle {
+    font-family: "Anton SC", sans-serif;
+    font-size: clamp(38px, 2vw, 50px);
+    background: linear-gradient(90deg, white 0%, #AFA9A9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 40px 0 0 0;
+    letter-spacing: 2px;
+}
+
+.spaceLine {
+    margin-bottom: 40px;
+}
+
+.line {
+    background: linear-gradient(90deg, #FF00FB 0%, #FFA109 100%);
+    border-radius: 5px;
+    margin: 0 0 0 10vw;
+    height: 1vh;
+    width: 12vw;
+}
+
+.infoBox {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+    height: 40vh;
+    width: 59vw;
+}
+
+.regisInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.74) 0%, #AFA9A9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.text {
+    font-size: clamp(10px, 1.1vw, 30px);
+}
+
+.recordFields {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 18vw;
+    width: 50%;
+}
+
+input {
+    color: black;
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(10px, 1.1vw, 30px);
+    border: 2px solid transparent;
+    border-radius: 5px;
+    background: linear-gradient(#fff, #fff) padding-box,
+        linear-gradient(90deg, #AF02FF, #0051FF) border-box;
+    padding: 0 0 0 5px;
+    height: 4.5vh;
+}
+
+.spaceButton {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0 0 0;
+    width: 100%;
+}
+
+.buttonRegist {
+    cursor: pointer;
+    font-family: "Poppins", sans-serif;
+    font-size: clamp(10px, 1vw, 30px);
+    color: rgb(255, 255, 255);
+    font-weight: bold;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    background:
+        linear-gradient(0, rgb(0, 0, 0), rgb(0, 0, 0)) padding-box,
+        linear-gradient(90deg, #EA02FF, #00D9FF) border-box;
+    padding: 10px 30px;
+    position: relative;
+    z-index: 1000;
+}
+
+.division {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+}
+
+.line1 {
+    background: #6e6d6d8c;
+    width: 5vw;
+    height: 1px;
+}
+
+.letter {
+    font-size: 13px;
+    color: #6e6d6d57;
+    font-weight: 300;
+}
+
+.socialAuth {
+    display: flex;
+    justify-content: space-evenly;
+    width: 20%;
+}
+
+.social {
+    transition: transform 0.2s ease;
+    width: 30px;
+}
+
+.social:hover {
+    transform: scale(1.15);
+}
+
+.terms {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    font-family: "Poppins", sans-serif;
+    width: 20%;
+}
+
+span {
+    font-size: clamp(10px, 0.5vw, 30px);
+    margin-right: 4px;
+    color: white;
+}
+
+a {
+    text-decoration-line: none;
+    color: #00BBFF;
+    font-size: clamp(10px, 0.5vw, 30px);
+}
+
+.line2 {
+    background: linear-gradient(150deg, #00D9FF, #EA02FF);
+    top: 0;
+    position: absolute;
+    left: 60%;
+    transform-origin: left center;
+    z-index: 2;
+    height: 100vh;
+    width: 5px;
+}
+
+.line3 {
+    background: linear-gradient(150deg, #00D9FF, #EA02FF);
+    top: 0;
+    position: absolute;
+    left: 59.7%;
+    transform-origin: left center;
+    z-index: 2;
+    height: 100vh;
+    width: 5px;
+}
+
+#WhiteBackg {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.questionTittle {
+    font-family: "Anton SC", sans-serif;
+    font-size: clamp(38px, 2vw, 50px);
+    background: linear-gradient(90deg, rgb(48, 48, 48) 0%, #AFA9A9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#loginSection {
+    background:
+        linear-gradient(90deg, #f5f5f500 40%, #000 40%),
+        url("https://res.cloudinary.com/ddvjgyi3f/image/upload/v1764471004/Gemini_Generated_Image_nk3tv7nk3tv7nk3t-removebg-preview_3_cvled4.png") no-repeat -1vw -1vh / 40vw;
+}
+
+#WhiteBackgLogin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+}
+
+#Whitetittle {
+    font-size: clamp(38px, 2vw, 50px);
+    background: linear-gradient(90deg, rgb(48, 48, 48) 0%, #AFA9A9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#BlackBackgLogin {
+    display: flex;
+    justify-content: center;
+}
+
+#infoLogin {
+    height: 30vh;
+}
+
+#tittleLogin {
+    margin: 0 0 0 0;
+}
+
+#spaceLineLogin {
+    margin: 0 0 0 0;
+}
+
+#lineLogin {
+    margin: 0 0 0 8vw;
+    width: 15vw;
+}
+
+#loginFields {
+    height: 7vw;
+}
+
+#spaceButtonLogin {
+    margin: 0 0 0 0;
+}
+
+.termsUse {
+    margin: 0 0 0 0;
+}
+
+#termsLogin {
+    margin: 0 0 0 0;
+    height: 10vh;
+}
+
+#divisionLogin {
+    height: 8vh;
+}
+
+#line2Login {
+    left: 40.3%;
+}
+
+#line3Login {
+    left: 40%;
+}
+
+/**
+@media(max-width: 1366px) {
+
+**/
