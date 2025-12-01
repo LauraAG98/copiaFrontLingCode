@@ -1,48 +1,83 @@
+#authContainer {
+    height: 100vh;
+    width: 100%;
+}
+
 #panelWrapper {
     position: relative;
     width: 100%;
     height: 100%;
+    overflow: hidden;
 }
 
-/* Ambos paneles encima uno del otro */
+#panelWrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+#blackOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    z-index: 5000;
+    transform: translateX(-100%);
+    /* Comienza fuera de la vista (a la izquierda) */
+    transition: transform 0.6s cubic-bezier(.4, 0, .2, 1);
+}
+
+/* Cuando el overlay se desliza de izquierda a derecha (registro → login) */
+#blackOverlay.slide-right {
+    transform: translateX(0);
+}
+
+/* Cuando el overlay se desliza de derecha a izquierda (login → registro) */
+#blackOverlay.slide-left {
+    transform: translateX(0);
+}
+
+/* Cuando el overlay se va a la derecha (login → registro) */
+#blackOverlay.exit-right {
+    transform: translateX(100%);
+}
+
+/* Cuando el overlay se va a la izquierda (registro → login) */
+#blackOverlay.exit-left {
+    transform: translateX(-100%);
+}
+
+/* Paneles que están encima de uno al otro */
 .panel {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    
-    transition: 
-        opacity 0.55s ease,
-        transform 0.55s cubic-bezier(.4, 0, .2, 1);
-
-    /* para que no se vean los que están atrás */
+    transition: transform 0.6s cubic-bezier(.4, 0, .2, 1);
     backface-visibility: hidden;
-}
-
-.panel.active {
-    opacity: 1;
-    transform: translateX(0) scale(1);
-    pointer-events: auto;
-    animation: panelIn 0.55s cubic-bezier(.4, 0, .2, 1);
-}
-
-.panel.inactive {
-    opacity: 0;
-    transform: translateX(30px) scale(0.96);
     pointer-events: none;
-    animation: panelOut 0.45s cubic-bezier(.4, 0, .2, 1);
+    transform: translateX(100%);
+    /* Los paneles inician fuera de la vista */
 }
 
-@keyframes swap {
-  0% {
-    opacity: 0;
-    transform: scale(0.96) translateX(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1) translateX(0);
-  }
+/* Panel activo se posiciona en el centro */
+.panel.active {
+    transform: translateX(0);
+    pointer-events: auto;
+}
+
+/* El panel de Login se mueve a la izquierda cuando está inactivo */
+#panelLogin.inactive {
+    transform: translateX(-100%);
+}
+
+/* El panel de Registro se mueve a la derecha cuando está inactivo */
+#panelRegister.inactive {
+    transform: translateX(100%);
 }
 
 .authClass {
@@ -193,7 +228,7 @@ input {
     width: 20%;
 }
 
-#checkbox{
+#checkbox {
     margin: 0 0 0 0;
 }
 
@@ -318,21 +353,21 @@ a {
 }
 
 @media(max-width: 1366px) {
-a {
-    text-decoration-line: none;
-    color: #00BBFF;
-    font-size: clamp(10px, 0.5vw, 30px);
-}
+    a {
+        text-decoration-line: none;
+        color: #00BBFF;
+        font-size: clamp(10px, 0.5vw, 30px);
+    }
 
-.terms {
-    width: 20%;
-}
+    .terms {
+        width: 20%;
+    }
 
-.line2 {
-    left: 60%;
-}
+    .line2 {
+        left: 60%;
+    }
 
-#line2Login {
-    left: 40.3%;
-}
+    #line2Login {
+        left: 40.3%;
+    }
 }
