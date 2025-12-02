@@ -378,4 +378,51 @@ a {
     #line2Login {
         left: 40.3%;
     }
+
+    .modal{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(0, 0, 0, 0.9);
+        position: fixed;
+        top:0;
+        left:0;
+        z-index: 6000;
+        height: 100vh;
+        width: 100vw;
+        transition: opacity 0.3s ease;
+    }
+
+    .modal.hidden{
+        display: none;
+        opacity: 0;
+    }
+
+    .modalContent{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: white;
+        border-radius: 5px;
+        overflow-y: auto;
+        color: black;
+        padding: 18px;
+        height: 90%;
+        width: 50%;
+    }
+
+    .closeButton{
+        cursor: pointer;
+        background-color: #5f5e5ea6;
+        font-weight: bold;
+    }
+
+    .modalTitle{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px;
+        border-bottom: 1px solid white;
+    }
 }

@@ -65,4 +65,14 @@ export class LoginRegistro {
       overlay!.addEventListener('transitionend', listener);
     }, 600);
   }
+
+  isModalOpen: boolean = false;
+
+  openModal() {
+    this.isModalOpen = true;
+  }
+
+  closeModal() {
+    this.isModalOpen = false;
+  }
 }

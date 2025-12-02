@@ -4,10 +4,7 @@
         <div id="blackOverlay"></div>
 
         <!-- PANEL DE REGISTRO -->
-        <div class="panel"
-             id="panelRegister"
-             [class.active]="!showLogin"
-             [class.inactive]="showLogin">
+        <div class="panel" id="panelRegister" [class.active]="!showLogin" [class.inactive]="showLogin">
 
             <div class="authClass" id="registerSection">
 
@@ -59,7 +56,51 @@
 
                     <div class="terms">
                         <input id="checkbox" type="checkbox">
-                        <p class="termsUse"> <span>Acepto</span> <a href="">términos de uso</a></p>
+                        <p class="termsUse"> <span>Acepto</span> <a (click)="openModal()">términos de uso</a></p>
+                    </div>
+                </div>
+
+                <div class="modal" [class.hidden]="!isModalOpen">
+                    <div class="modalContent">
+                        <div class="modalTitle">
+                            <button class="closeButton" (click)="closeModal()">X</button>
+                            <h3>Términos y Condiciones de Uso</h3>
+                        </div>
+                        <div class="modalBody">
+                            <p>Bienvenido al aplicativo educativo de inglés técnico aplicado al desarrollo de software.
+                                Antes de continuar con tu registro, ten en cuenta lo siguiente:</p>
+                            <h4>1. Finalidad</h4>
+                            <p>El aplicativo tiene fines exclusivamente educativos, para mejorar tus habilidades en
+                                inglés técnico aplicado al desarrollo de software.</p>
+                            <h4>2. Uso responsable:</h4>
+                            <p>Utiliza la plataforma de forma ética, sin modificar, dañar ni usar indebidamente las
+                                herramientas o contenidos.</p>
+                            <h4>3. Privacidad:</h4>
+                            <p>Tus datos personales se usarán solo con fines académicos y estarán protegidos conforme a
+                                la política de privacidad.</p>
+                            <h4>4. Propiedad intelectual:</h4>
+                            <p>Los textos, audios, ejercicios, simulaciones e interfaz son propiedad del aplicativo.
+                                Está prohibido copiarlos o distribuirlos sin autorización.</p>
+                            <h4>5. Inteligencia artificial:</h4>
+                            <p>Las respuestas generadas por IA son de apoyo educativo y pueden contener errores o
+                                imprecisiones.</p>
+                            <h4>6. Normas de uso:</h4>
+                            <ul>
+                                <li>No compartas tus credenciales.</li>
+                                <li>Completa las actividades de manera personal y honesta.</li>
+                                <li>Usa el contenido solo con fines de aprendizaje.</li>
+                            </ul>
+                            <h4>7. Actualizaciones:</h4>
+                            <p>El aplicativo puede modificar sus funciones o políticas sin previo aviso. Al registrarte,
+                                confirmas que has leído y aceptas estos términos y normas de uso.</p>
+                        </div>
+                        <div id="modalFooter">
+                            <div class="terms">
+                                <input id="checkbox" type="checkbox">
+                                <p class="termsUse"> <span>Acepto</span> <a (click)="openModal()">términos de uso</a>
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -77,10 +118,7 @@
         </div>
 
         <!-- PANEL DE LOGIN -->
-        <div class="panel"
-             id="panelLogin"
-             [class.active]="showLogin"
-             [class.inactive]="!showLogin">
+        <div class="panel" id="panelLogin" [class.active]="showLogin" [class.inactive]="!showLogin">
 
             <div class="authClass" id="loginSection">
 
