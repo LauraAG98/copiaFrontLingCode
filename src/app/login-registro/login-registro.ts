@@ -75,4 +75,10 @@ export class LoginRegistro {
   closeModal() {
     this.isModalOpen = false;
   }
+
+  onBackdropClick(event:MouseEvent){
+    if(event.target === event.currentTarget){
+      this.closeModal();
+    }
+  }
 }

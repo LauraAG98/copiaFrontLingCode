@@ -60,12 +60,15 @@
                     </div>
                 </div>
 
-                <div class="modal" [class.hidden]="!isModalOpen">
-                    <div class="modalContent">
-                        <div class="modalTitle">
-                            <button class="closeButton" (click)="closeModal()">X</button>
-                            <h3>Términos y Condiciones de Uso</h3>
+                <div class="modal" (click)="onBackdropClick($event)" [class.hidden]="!isModalOpen">
+                    <div class="modalContent" (click)="$event.stopPropagation()">
+
+                        <div class="modalExit">
+                            <button class="closeButton" (click)="closeModal()">x</button>
                         </div>
+
+                        <h3>Términos y Condiciones de Uso</h3>
+
                         <div class="modalBody">
                             <p>Bienvenido al aplicativo educativo de inglés técnico aplicado al desarrollo de software.
                                 Antes de continuar con tu registro, ten en cuenta lo siguiente:</p>
@@ -93,12 +96,14 @@
                             <h4>7. Actualizaciones:</h4>
                             <p>El aplicativo puede modificar sus funciones o políticas sin previo aviso. Al registrarte,
                                 confirmas que has leído y aceptas estos términos y normas de uso.</p>
-                        </div>
-                        <div id="modalFooter">
-                            <div class="terms">
-                                <input id="checkbox" type="checkbox">
-                                <p class="termsUse"> <span>Acepto</span> <a (click)="openModal()">términos de uso</a>
-                                </p>
+
+                            <div id="modalFooter">
+                                <div class="terms" id="termsModal">
+                                    <input id="checkbox" type="checkbox">
+                                    <p class="termsUse" id="termsUseModal"> <span id="textSpan">Acepto</span>
+                                        <a>términos de uso</a>
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -153,6 +158,28 @@
 
                     <div class="terms" id="termsLogin">
                         <p class="termsUse"><a href="">¿Olvidaste tu contraseña?</a></p>
+                    </div>
+
+                    <div class="modal" (click)="onBackdropClick($event)" [class.hidden]="!isModalOpen">
+                        <div class="modalContent" (click)="$event.stopPropagation()">
+
+                            <div class="modalExit">
+                                <button class="closeButton" (click)="closeModal()">x</button>
+                            </div>
+
+                            <div class="modalBody">
+                                <p>Ingresa tu correo electrónico para enviarte un código de verificación.</p>
+
+                                <div id="modalFooter">
+                                    <div class="terms" id="termsModal">
+                                        <input id="checkbox" type="checkbox">
+                                        <p class="termsUse" id="termsUseModal"> <span id="textSpan">Acepto</span>
+                                            <a>términos de uso</a>
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="division" id="divisionLogin">
