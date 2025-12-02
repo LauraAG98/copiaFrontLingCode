@@ -13,24 +13,24 @@ export class LoginRegistro {
   toggleAuth(): void {
     const overlay = document.getElementById("blackOverlay");
     if (!overlay) return;
-  const goingToLogin = !this.showLogin;
+    const goingToLogin = !this.showLogin;
 
-   this.showLogin = !this.showLogin;
-  // 1. Fase de Deslizamiento del Overlay (Entrada)
-  if (goingToLogin) {
-   
-    // Registro → Login (Overlay se desliza de izquierda a derecha)
-    overlay?.classList.add("slide-right");
-    overlay?.classList.remove("slide-left", "exit-left", "exit-right"); // Aseguramos que solo haya una
-  } else {
-    // Login → Registro (Overlay se desliza de derecha a izquierda)
-    overlay?.classList.add("slide-left");
-    overlay?.classList.remove("slide-right", "exit-left", "exit-right"); // Aseguramos que solo haya una
-  }
+    this.showLogin = !this.showLogin;
+    // 1. Fase de Deslizamiento del Overlay (Entrada)
+    if (goingToLogin) {
 
-  // 2. Fase de Cambio de Vista (Dentro del Overlay)
-  // Usaremos 600ms (la duración de la transición del overlay)
-  setTimeout(() => {
+      // Registro → Login (Overlay se desliza de izquierda a derecha)
+      overlay?.classList.add("slide-right");
+      overlay?.classList.remove("slide-left", "exit-left", "exit-right"); // Aseguramos que solo haya una
+    } else {
+      // Login → Registro (Overlay se desliza de derecha a izquierda)
+      overlay?.classList.add("slide-left");
+      overlay?.classList.remove("slide-right", "exit-left", "exit-right"); // Aseguramos que solo haya una
+    }
+
+    // 2. Fase de Cambio de Vista (Dentro del Overlay)
+    // Usaremos 600ms (la duración de la transición del overlay)
+    setTimeout(() => {
       let exitClass: string;
       let slideClass: string;
 
@@ -44,18 +44,18 @@ export class LoginRegistro {
 
       // Aplicar la salida
       overlay!.classList.remove(slideClass);
-      overlay!.classList.add(exitClass);
 
       // 🚨 ¡NUEVA LÓGICA DE LIMPIEZA! 🚨
       // Creamos un listener que se ejecuta cuando la animación de salida (exit) termina.
       const listener = (event: Event) => {
         // Solo actuamos si la transición es la de transformación
         if ((event as TransitionEvent).propertyName === 'transform') {
+
           // Remover las clases de salida para que el overlay vuelva a su posición inicial
-          overlay!.classList.remove(exitClass); 
+          overlay!.classList.remove(exitClass);
           // Opcional: remover también la clase de entrada
           overlay!.classList.remove(slideClass);
-          
+
           // Desvincular el listener para evitar que se ejecute en futuras transiciones.
           overlay!.removeEventListener('transitionend', listener);
         }

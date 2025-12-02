@@ -353,9 +353,17 @@ a {
 }
 
 @media(max-width: 1366px) {
+    .tittle{
+        margin: 0 0 0 0;
+    }
+
     a {
         text-decoration-line: none;
         color: #00BBFF;
+        font-size: clamp(10px, 0.5vw, 30px);
+    }
+
+    span {
         font-size: clamp(10px, 0.5vw, 30px);
     }
 
