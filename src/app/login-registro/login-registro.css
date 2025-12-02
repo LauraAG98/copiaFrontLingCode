@@ -424,6 +424,28 @@ h3 {
     width: 40%;
 }
 
+#modalContentLogin{
+    height: 30%;
+    width: 30%;
+}
+
+#modalBodyLogin{
+    overflow: hidden;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    height: 100%;
+    width: 90%;
+}
+
+#textModal{
+    font-size: clamp(10px, 1.1vw, 18px);
+}
+
+#inputSize{
+    width: 100%;
+}
+
 @media(max-width: 1366px) {
     .tittle {
         margin: 0 0 0 0;

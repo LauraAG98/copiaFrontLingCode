@@ -157,29 +157,7 @@
                     </div>
 
                     <div class="terms" id="termsLogin">
-                        <p class="termsUse"><a href="">¿Olvidaste tu contraseña?</a></p>
-                    </div>
-
-                    <div class="modal" (click)="onBackdropClick($event)" [class.hidden]="!isModalOpen">
-                        <div class="modalContent" (click)="$event.stopPropagation()">
-
-                            <div class="modalExit">
-                                <button class="closeButton" (click)="closeModal()">x</button>
-                            </div>
-
-                            <div class="modalBody">
-                                <p>Ingresa tu correo electrónico para enviarte un código de verificación.</p>
-
-                                <div id="modalFooter">
-                                    <div class="terms" id="termsModal">
-                                        <input id="checkbox" type="checkbox">
-                                        <p class="termsUse" id="termsUseModal"> <span id="textSpan">Acepto</span>
-                                            <a>términos de uso</a>
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <p class="termsUse"><a (click)="openModal()">¿Olvidaste tu contraseña?</a></p>
                     </div>
 
                     <div class="division" id="divisionLogin">
@@ -198,6 +176,20 @@
                         <a href="microsoft"><img class="social"
                                 src="https://res.cloudinary.com/ddvjgyi3f/image/upload/v1763586361/mi-removebg-preview_1_xe39zn.png"
                                 alt=""></a>
+                    </div>
+                </div>
+
+                <div class="modal" (click)="onBackdropClick($event)" [class.hidden]="!isModalOpen">
+                    <div class="modalContent" id="modalContentLogin" (click)="$event.stopPropagation()">
+
+                        <div class="modalBody" id="modalBodyLogin">
+                            <p id="textModal">Ingresa tu correo electrónico para enviarte un código de verificación.</p>
+                            <input type="text" id="inputSize">  
+                            <div id="modalFooter">
+                                <button></button>
+                                <button></button>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
