@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-login-registro',
-  imports: [CommonModule],
+  imports: [CommonModule,RouterModule],
   templateUrl: './login-registro.html',
   styleUrl: './login-registro.css',
 })
@@ -92,5 +93,12 @@ export class LoginRegistro {
   openConfirmModal() {
     this.isModalOpen = false;
     this.isConfirmModal = true;
+  }
+
+  constructor(private router: Router){}
+
+  goNewPassword(){
+    this.closeConfirmModal();
+    this.router.navigate(['/new-password'])
   }
 }

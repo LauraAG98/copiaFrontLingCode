@@ -26,9 +26,9 @@
                         <div class="recordFields">
                             <input class="field" id="name" type="">
                             <input class="field" id="nickname" type="">
-                            <input class="field" id="email" type="">
-                            <input class="field" id="password" type="">
-                            <input class="field" id="confirmPass" type="">
+                            <input class="field" id="email" type="email">
+                            <input class="field" id="password" type="password">
+                            <input class="field" id="confirmPass" type="password">
                         </div>
                     </div>
 
@@ -147,8 +147,8 @@
                         </div>
 
                         <div class="recordFields" id="loginFields">
-                            <input id="email" type="">
-                            <input id="password" type="">
+                            <input id="email" type="email">
+                            <input id="password" type="password">
                         </div>
                     </div>
 
@@ -212,7 +212,7 @@
 
                             <div class="modalFooter" id="modalFooterLogin">
                                 <button class="buttons" id="buttonCancel" (click)="closeModal()">Cancelar</button>
-                                <button class="buttons" id="buttonAccept" (click)="closeModal()">Aceptar</button>
+                                <button class="buttons" id="buttonAccept" (click)="goNewPassword()">Aceptar</button>
                             </div>
                         </div>
                     </div>
