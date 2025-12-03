@@ -446,6 +446,43 @@ h3 {
     width: 100%;
 }
 
+    #modalFooterLogin {
+        justify-content: end;
+        margin: 30px 0 0 0;
+    }
+
+    .buttons {
+        cursor: pointer;
+        height: 5vh;
+        width: 8vw;
+        font-family: "Poppins", sans-serif;
+        font-size: clamp(10px, 1vw, 30px);
+        border-radius: 8px;
+    }
+
+    #buttonCancel {
+        background-color: transparent;
+        border: black 1px solid;
+        margin: 0 30px 0 0;
+    }
+
+    #buttonAccept {
+        background-color: #04C9FF;
+        border: #04C9FF 1px solid;
+    }
+
+    #spaceInputs{
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .inputs{
+        text-align: center;
+        height: 5vh;
+        width: 2.5vw;
+        padding: 0 0 0 0;
+    }
+
 @media(max-width: 1366px) {
     .tittle {
         margin: 0 0 0 0;
@@ -495,25 +532,5 @@ h3 {
     #modalFooterLogin {
         justify-content: end;
         margin: 30px 0 0 0;
-    }
-
-    .buttons {
-        cursor: pointer;
-        height: 5vh;
-        width: 8vw;
-        font-family: "Poppins", sans-serif;
-        font-size: clamp(10px, 1vw, 30px);
-        border-radius: 8px;
-    }
-
-    #buttonCancel {
-        background-color: transparent;
-        border: black 1px solid;
-        margin: 0 30px 0 0;
-    }
-
-    #buttonAccept {
-        background-color: #04C9FF;
-        border: #04C9FF 1px solid;
     }
 }

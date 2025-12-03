@@ -184,7 +184,7 @@
 
                         <div class="modalBody" id="modalBodyLogin">
                             <p id="textModal">Ingresa tu correo electrónico para enviarte un código de verificación.</p>
-                            <input type="text" id="inputSize">  
+                            <input type="text" id="inputSize">
                             <div class="modalFooter" id="modalFooterLogin">
                                 <button class="buttons" id="buttonCancel" (click)="closeModal()">Cancelar</button>
                                 <button class="buttons" id="buttonAccept" (click)="openConfirmModal()">Aceptar</button>
@@ -196,17 +196,20 @@
                 <div class="line2" id="line2Login"></div>
                 <div class="line3" id="line3Login"></div>
 
-                 <div class="modal" (click)="onBackdropClick($event)" [class.hidden]="!isConfirmModal">
+                <div class="modal" (click)="onBackdropClick($event)" [class.hidden]="!isConfirmModal">
                     <div class="modalContent" id="modalContentLogin" (click)="$event.stopPropagation()">
 
                         <div class="modalBody" id="modalBodyLogin">
                             <p id="textModal">Ingresa el código que ha sido enviado a tu correo eléctronico.</p>
-                            <input type="text" class="inputs" id="code1">
-                            <input type="text" class="inputs" id="code2"> 
-                            <input type="text" class="inputs" id="code3"> 
-                            <input type="text" class="inputs" id="code4"> 
-                            <input type="text" class="inputs" id="code5"> 
-                            <input type="text" class="inputs" id="code6">   
+                            <div id="spaceInputs">
+                                <input type="text" class="inputs" id="code1">
+                                <input type="text" class="inputs" id="code2">
+                                <input type="text" class="inputs" id="code3">
+                                <input type="text" class="inputs" id="code4">
+                                <input type="text" class="inputs" id="code5">
+                                <input type="text" class="inputs" id="code6">
+                            </div>
+
                             <div class="modalFooter" id="modalFooterLogin">
                                 <button class="buttons" id="buttonCancel" (click)="closeModal()">Cancelar</button>
                                 <button class="buttons" id="buttonAccept" (click)="closeModal()">Aceptar</button>
