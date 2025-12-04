@@ -1,15 +1,34 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router, RouterModule } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-login-registro',
-  imports: [CommonModule,RouterModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './login-registro.html',
   styleUrl: './login-registro.css',
 })
 export class LoginRegistro {
   showLogin: boolean = false;
+
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute
+  ) { }
+
+  ngOnInit() {
+    this.route.queryParams.subscribe(params => {
+      const view = params['view'];
+
+      if (view === 'login') {
+        this.showLogin = true;
+      }
+
+      if (view === 'register') {
+        this.showLogin = false;
+      }
+    })
+  }
 
   toggleAuth(): void {
     const overlay = document.getElementById("blackOverlay");
@@ -75,7 +94,7 @@ export class LoginRegistro {
 
   closeModal() {
     this.isModalOpen = false;
-    this.isConfirmModal=false;
+    this.isConfirmModal = false;
   }
 
   onBackdropClick(event: MouseEvent) {
@@ -95,9 +114,7 @@ export class LoginRegistro {
     this.isConfirmModal = true;
   }
 
-  constructor(private router: Router){}
-
-  goNewPassword(){
+  goNewPassword() {
     this.closeConfirmModal();
     this.router.navigate(['/new-password'])
   }
